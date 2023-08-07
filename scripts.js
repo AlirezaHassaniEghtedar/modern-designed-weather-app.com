@@ -1,14 +1,16 @@
 const API = "4c4e02ab398ac2cd7b131a402c748b6d";
 
+const submitBtn = document.querySelector(".search form button");
 
-document.querySelector(".search button").onclick = function() {
-    const cityName = String(document.querySelector(".search input").value).toLowerCase();
+submitBtn.addEventListener("click" , (event) => {
+    event.preventDefault();
+    getWeather();
+})
+
+async function getWeather() {
+
+    const cityName = String(document.querySelector(".search form input").value).toLowerCase();
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API}&units=metric`;
-    getWeather(URL);
-}
-
-
-async function getWeather(URL) {
     const response = await fetch(URL);
     const data = await response.json();
 

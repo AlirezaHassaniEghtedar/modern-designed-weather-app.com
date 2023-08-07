@@ -20,6 +20,13 @@ body {
     text-align: center;
 }
 
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .search {
     width: 100%;
     display: flex;
